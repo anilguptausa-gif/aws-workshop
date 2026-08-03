@@ -80,15 +80,13 @@ Let's use Drilldown Logs to explore logs from our applications on AWS:
 
 1.  In the **Filter logs by string** box, enter `error`
 
-    Logs containing the string `error` are now displayed.
+    Logs containing the string `error` are now displayed. Remove the filter.
 
-1.  We can zoom in to find logs from a particular instance of our app. Click on the **Labels** tab.
+1.  We can zoom in to find logs from a particular instance of our app. Click on the **Labels** tab, which is between the **Logs** and **Fields** tabs.
 
     Then click on the **container_id** -> **Select** button, which shows logs broken down by each instance of our application.
 
     This is super-useful when you want to see why one particular instance of your app is having problems.
-
-1.  In the container_id breakdown, click on **include** by the side of one of the container IDs. Then click on the **Logs** tab to just show logs from that instance.
 
 :::aws-tip
 
@@ -148,15 +146,19 @@ To perform side-by-side correlations, we can use the **Explore** view in Grafana
 
 1. Navigate to **Explore**.
 
-2. Select the **Loki** data source, then enter the following query:
+2. Select the **Loki** data source
+   
+3. At the top right, change the view to **Code**
+
+4. Then enter the following query:
 
     ```
     {service_name="tickets-requester"}
     ```
 
-3.  Click to expand a log line, then click on the button by the side of the *traceID* field, to open the trace browser.
+5.  Click to expand a log line, then click on the button by the side of the *traceID* field, to open the trace browser.
 
-4.  Now we can see exactly what happened during this interaction.
+6.  Now we can see exactly what happened during this interaction.
 
 
 ## Wrapping Up
