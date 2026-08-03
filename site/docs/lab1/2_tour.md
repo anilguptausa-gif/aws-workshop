@@ -45,10 +45,7 @@ Let's take a look at our applications in this environment:
 
 1.  Click on the **Traces** tab.
 
-1.  Click on a trace to see detected process, ECS task name, cloud region, and other attributes.
-
-    These are attributes that are detected by our OpenTelemetry instrumentation and can give us rich context to help us correlate or filter signals.
-
+1.  Click on a trace to see the flow and timings for a particular request.
 
 ## Step 2: Observe AWS infrastructure
 
@@ -111,7 +108,7 @@ So let's explore some telemetry signals! We've already configured some of our ap
 
 1.  This view is showing all of our instrumented services. Let's zoom in a little and just find all **ECS** services.
 
-    Using the filter panel (_"Filter by label values"_) at the top of the page, add a filter:
+    Using the filter panel (_"+ label = value"_) at the top of the page, add a filter:
 
     **resource.cloud.platform** = **aws_ecs**
 
@@ -147,11 +144,11 @@ Let's test this out by connecting to our application's RDS database.
 
     :::
 
-1.  Now let's run a database query on our RDS database instance. From the top of the data source edit page, click on the **Explore data** button. 
+1.  Now let's run a database query on our RDS database instance. From the top right of the data source edit page, click on the **Explore data** button. 
 
     OR, from the side menu navigate to **Explore** and then select the **tickets-db** data source.
 
-1.  Switch to **Code** view, then type the following SQL statement:
+1.  At the top right, switch to **Code** view. Then type the following SQL statement:
 
     ```
     SELECT COUNT(*) FROM booking;
