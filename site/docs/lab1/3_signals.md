@@ -11,7 +11,7 @@ Underneath all of the tools you'll use in this workshop are the core telemetry s
 
 Each of these telemetry databases stores signals from your AWS infrastructure and applications.
 
-In this main hands-on section for this lab, you'll get comfortable with exploring these signals in Grafana, and understanding when to use each type. This will help get you ready to troubleshoot problems with these signals, and then build your own dashboard, which you will do in the following labs!
+In this main hands-on section for this lab, you'll get comfortable with exploring these signals in Grafana, and understanding when to use each type. This will help get you ready to troubleshoot problems with these signals, and then build your own dashboard, which you will do in the following labs.
 
 ## Step 1: Explore Prometheus metrics
 
@@ -80,7 +80,7 @@ Let's use Drilldown Logs to explore logs from our applications on AWS:
 
 1.  In the **Filter logs by string** box, enter `error`
 
-    Logs containing the string `error` are now displayed.
+    Logs containing the string `error` are now displayed.  Remove the `error` filter.
 
 1.  We can zoom in to find logs from a particular instance of our app. Click on the **Labels** tab.
 
@@ -148,15 +148,19 @@ To perform side-by-side correlations, we can use the **Explore** view in Grafana
 
 1. Navigate to **Explore**.
 
-2. Select the **Loki** data source, then enter the following query:
+2. Select the **Loki** data source (something along the lines of grafanacloud-abcd12-logs).  Make sure the **Code** option is selected at the top right.
+
+   Enter the following query:
 
     ```
     {service_name="tickets-requester"}
     ```
 
-3.  Click to expand a log line, then click on the button by the side of the *traceID* field, to open the trace browser.
+4.  Click to expand a log line, then click on the button by the side of the *traceID* field, to open the trace browser.  Since traces are sampled,
 
-4.  Now we can see exactly what happened during this interaction.
+     not all logs will have associated traces.  If your log doesn't have a trace, select another one.
+
+6.  Now we can see exactly what happened during this interaction.
 
 
 ## Wrapping Up
