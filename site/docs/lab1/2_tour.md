@@ -3,7 +3,7 @@
 
 # 1.2. Tour of Grafana Cloud
 
-During the course of this workshop, you'll be observing applications in an AWS environment, which uses various AWS services, like:
+During the course of this workshop, you'll be observing applications in an AWS environment which uses various AWS services including:
 
 - Lambda
 - EC2
@@ -29,7 +29,7 @@ Let's take a look at our applications in this environment:
 
 1.  Navigate to **Observability -> Application** in the left-hand menu.
 
-1.  This will take you to the **Service Inventory** page, where you can see all your OpenTelemetry-instrumented services.
+1.  This will take you to the **Services** page, where you can see all your OpenTelemetry-instrumented services.
 
     Notice how the Service Inventory automatically detects your runtime languages and detects your AWS resources (denoted by the AWS icon).
 
@@ -45,10 +45,9 @@ Let's take a look at our applications in this environment:
 
 1.  Click on the **Traces** tab.
 
-1.  Click on a trace to see detected process, ECS task name, cloud region, and other attributes.
+1.  Click on a Trace ID to complete journey of a single request as it moves through your system — every service it touched, in what order, and how long each step took.
 
-    These are attributes that are detected by our OpenTelemetry instrumentation and can give us rich context to help us correlate or filter signals.
-
+    This information gives us critical information as to where latency or errors are occurring.
 
 ## Step 2: Observe AWS infrastructure
 
@@ -64,7 +63,7 @@ First we'll take a look at how it's configured, then we will look at the built-i
 
     - The scrape job fetches CloudWatch metrics from AWS and brings them into your Grafana instance.
 
-1.  Return back to the Cloud Provider -> AWS screen. Click on **AWS/EC2** to show the EC2 dashboard.
+1.  Return back to the Cloud Provider -> AWS screen. Click on **AWS EC2** to show the EC2 dashboard.
 
     - See the EC2 instances in this AWS Account, at a glance.
 
